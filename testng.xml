@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="JCWebAutomationFramework">
+        <classes>
+            <class name="org.example.tests.TestJCLogin">
+                <methods>
+                    <include name="testloginPositive"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
