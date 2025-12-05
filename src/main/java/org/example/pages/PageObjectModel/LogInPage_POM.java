@@ -47,6 +47,14 @@ public class LogInPage_POM extends CommonToAllPage {
         jsClick(logInButton);
     }
 
+    public String LogInWithValidUserNameAndInValidPassword() throws InterruptedException, IOException {
+        presenceOfElement(title);
+        enterInput(username, PropertyReader.readKey("username"));
+        enterInput(password, PropertyReader.readKey("password"));
+        jsClick(logInButton);
+        return getElement(err_msg).getText();
+    }
+
 
     public DashboardPage_POM afterLoginWithValidCred(){
         return new DashboardPage_POM();

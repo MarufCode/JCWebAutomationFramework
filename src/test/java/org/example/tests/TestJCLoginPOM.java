@@ -54,8 +54,21 @@ public class TestJCLoginPOM extends CommonToAllTest {
         Assertions.assertThat(expected_dashboard_text)
                 .isNotNull()
                 .isNotBlank();
+    }
 
 
+    @Test
+    @Owner("Maruf")
+    public void testLogInWithValidUserNameAndInValidPassword() throws IOException, InterruptedException {
+        LogInPage_POM logInPagePom = new LogInPage_POM();
+        logInPagePom.openJCLogInURL();
+        logInPagePom.LogInWithValidUserNameAndInValidPassword();
+
+        String err_msg_txt = logInPagePom.LogInWithValidUserNameAndInValidPassword();
+        Assertions.assertThat(err_msg_txt)
+                .isNotNull()
+                .isNotBlank()
+                .contains("Invalid User ID or Password. Please try again.");
     }
 
 
