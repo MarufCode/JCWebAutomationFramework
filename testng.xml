@@ -3,10 +3,10 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="JCWebAutomationFramework">
         <classes>
-            <class name="org.example.tests.TestJCLogin">
-                <methods>
-                    <include name="testloginPositive"/>
-                </methods>
+            <class name="org.example.tests.TestJCLoginPOM">
+<!--                <methods>-->
+<!--                    <include name="testLoginNegative"/>-->
+<!--                </methods>-->
             </class>
         </classes>
     </test>

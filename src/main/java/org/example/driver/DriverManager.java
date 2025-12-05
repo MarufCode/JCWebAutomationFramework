@@ -20,7 +20,7 @@ public class DriverManager {
             EdgeOptions options = new EdgeOptions();
             options.addArguments("--start-maximized");
             options.addArguments("--guest");
-            options.addArguments("--headless");
+//            options.addArguments("--headless");
             driver = new EdgeDriver(options);
         }
     }
