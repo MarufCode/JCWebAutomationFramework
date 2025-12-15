@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 import static org.example.driver.DriverManager.getDriver;
+import static org.example.driver.DriverManagerTL.getDriver;
 
 public class CommonToAllPage {
 
@@ -39,8 +40,13 @@ public class CommonToAllPage {
     }
 
 
+
     public void enterInput(By by, String key){
        getDriver().findElement(by).sendKeys(key);
+    }
+
+    public void enterInput(WebElement element, String key){
+       element.sendKeys(key);
     }
 
 
@@ -48,6 +54,7 @@ public class CommonToAllPage {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(30));
         return wait.until(ExpectedConditions.presenceOfElementLocated(elementLocation));
     }
+
 
     public WebElement visibilityOfElement(By elementLocation) {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(30));
