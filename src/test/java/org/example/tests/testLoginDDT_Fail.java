@@ -19,8 +19,6 @@ public class testLoginDDT_Fail extends CommonToAllTest {
         String resultText = loginPage.login(username, password);
         Assert.assertEquals(
                 resultText,
-                "THIS TEXT WILL NEVER MATCH",
-                "Forcing failure to verify screenshot capture"
-        );
+                "THIS TEXT WILL NEVER MATCH", "Forcing failure to verify screenshot capture");
     }
 }
