@@ -8,12 +8,12 @@ import org.testng.annotations.BeforeMethod;
 public class CommonToAllTest {
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup(){
         DriverManagerTL.init();
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown(){
         DriverManagerTL.down();
     }

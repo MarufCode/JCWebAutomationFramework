@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Maruf.sherikar.EXT.SVKMGRP/IdeaProjects/JCWebAutomationFramework">
+        <classes>
+            <class name="org.example.tests.TestJCLogin">
+                <methods>
+                    <include name="testLoginNegative"/>
+                </methods>
+            </class>
+            <class name="org.example.tests.TestJCLoginPOM">
+                <methods>
+                    <include name="testLoginNegative"/>
+                    <include name="testLoginPositive"/>
+                    <include name="testLogInWithValidUserNameAndInValidPassword"/>
+                </methods>
+            </class>
+            <class name="org.example.tests.testLoginDDT">
+                <methods>
+                    <include name="testLogInDDT"/>
+                </methods>
+            </class>
+            <class name="org.example.tests.testLoginDDT_Fail">
+                <methods>
+                    <include name="testLogInDDT_Failure"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

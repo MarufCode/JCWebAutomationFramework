@@ -14,6 +14,11 @@ public class ScreenshotUtil {
 
     public static String captureScreenshot(String testName) {
 
+        if (DriverManagerTL.getDriver() == null) {
+            System.out.println("Driver is null. Screenshot not captured.");
+            return null;
+        }
+
         String timestamp = LocalDateTime.now()
                 .format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
 
@@ -34,4 +39,5 @@ public class ScreenshotUtil {
 
         return screenshotPath;
     }
+
 }
