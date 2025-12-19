@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.IOException;
 import java.time.Duration;
 
-import static org.example.driver.DriverManager.getDriver;
+//import static org.example.driver.DriverManager.getDriver;
 import static org.example.driver.DriverManagerTL.getDriver;
 
 public class CommonToAllPage {
@@ -25,7 +25,7 @@ public class CommonToAllPage {
     }
 
 
-    public void openJCLogInURL() throws IOException {
+    public void openJCLogInURL() {
         getDriver().get(PropertyReader.readKey("url"));
     }
 
@@ -41,9 +41,12 @@ public class CommonToAllPage {
 
 
 
-    public void enterInput(By by, String key){
-       getDriver().findElement(by).sendKeys(key);
+    public void enterInput(By by, String key) {
+        WebElement element = visibilityOfElement(by);
+        element.clear();
+        element.sendKeys(key);
     }
+
 
     public void enterInput(WebElement element, String key){
        element.sendKeys(key);

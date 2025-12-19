@@ -6,11 +6,11 @@ import java.util.Properties;
 
 public class PropertyReader {
 
-    public PropertyReader() {
+    private PropertyReader() {
     }
 
 
-    public static String readKey(String key) throws IOException {
+    public static String readKey(String key) {
 
 
         FileInputStream fileInputStream = null;
@@ -27,7 +27,11 @@ public class PropertyReader {
         } catch (Exception e) {
             e.printStackTrace();
         }finally {
-            fileInputStream.close();
+            try {
+                fileInputStream.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         return p.getProperty(key);
